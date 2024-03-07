@@ -5,10 +5,10 @@ import './App.css'
 import backgroundImage from './assets/currencyBackground.jpg'
 function App() {
   
-  const [amount,setAmount]=useState(null);
+  const [amount,setAmount]=useState(0);
   const [from,setFrom]=useState("usd");
   const [to,setTo]=useState("inr");
-  const [converted,setConverted]=useState(null);
+  const [converted,setConverted]=useState(0);
 
   const currencyInfo= useCurrencyInfo(from)
   const options=Object.keys(currencyInfo);
@@ -16,7 +16,7 @@ function App() {
   const swap=()=>{
     setFrom(to);
     setTo(from);
-    setConverted(amount);
+    setConverted(0);
     setAmount(converted);
   }
   const convert=()=>
